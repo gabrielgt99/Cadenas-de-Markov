@@ -21,9 +21,9 @@ Tenga en cuenta que el programa esta pensado para ser escrito de forma horizonta
 
 |       /       |       a       |       b       |       b       |
 | ------------- | ------------- | ------------- | ------------- |
-|       a       |       0       |      0.5      |      0.5      |
-|       b       |     0.75      |       0       |     0.25      |
-|       c       |       1       |       0       |       0       |
+|       a       |       0       |      0.5      |      0.5      | => `(aa+ab+ac) = 1`
+|       b       |     0.75      |       0       |     0.25      | => `(ba+bb+bc) = 1`
+|       c       |       1       |       0       |       0       | => `(ca+cb+cc) = 1`
 
 <!-- LICENSE -->
 ## License
