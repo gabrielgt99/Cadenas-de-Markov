@@ -8,13 +8,6 @@
 
 <br />
 
-<!-- TABLE OF CONTENTS -->
-## Tabla de Contenidos
-
-* [Acerca del Proyecto](#about-the-project)
-* [Licencia](#license)
-* [Contacto](#contact)
-
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
 En este proyecto se busca encontrar el estado estable de las cadenas de markov.
