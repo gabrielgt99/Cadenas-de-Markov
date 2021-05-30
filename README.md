@@ -12,9 +12,6 @@
 ## Tabla de Contenidos
 
 * [Acerca del Proyecto](#about-the-project)
-* [Como usar](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
 * [Uso y Ejemplos](#usage)
 * [License](#license)
 * [Contact](#contact)
