@@ -1,3 +1,9 @@
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+
 <h1>Estado Estable Cadenas de Markov</h1>
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
@@ -19,7 +25,7 @@ Tenga en cuenta que el programa esta pensado para ser escrito de forma horizonta
 ## Ejemplo
 ### Matriz de Transicion
 
-|       /       |       a       |       b       |       b       |
+|               |       a       |       b       |       b       |
 | ------------- | ------------- | ------------- | ------------- |
 |       a       |       0       |      0.5      |      0.5      | => `(aa+ab+ac) = 1`
 |       b       |     0.75      |       0       |     0.25      | => `(ba+bb+bc) = 1`
