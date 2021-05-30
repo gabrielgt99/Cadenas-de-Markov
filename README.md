@@ -33,6 +33,10 @@ td, th {
 |       b       |     0.75      |       0       |     0.25      | => `(ba+bb+bc) = 1`
 |       c       |       1       |       0       |       0       | => `(ca+cb+cc) = 1`
 
+aa|bb|cc
+--|--|--
+ee|ff|gg 
+
 <!-- LICENSE -->
 ## License
 
