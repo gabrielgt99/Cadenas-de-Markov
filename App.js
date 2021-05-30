@@ -5,7 +5,7 @@ import { Buttons } from './components/Buttons.js';
 import { TextNode } from './components/TextNode.js';
 import { Table } from './components/Table.js';
 import { Alert } from './components/Alert.js';
-import { calculateMarkov } from './logic.js';
+import calculateMarkov from './logic.js';
 
 export async function App() {
 	//var DOM
@@ -27,6 +27,7 @@ export async function App() {
 	$div.appendChild(Buttons('mainBtn', 'Siguiente', 'btn btn-outline-dark'));
 
 	//var logic
+	let ans = null;
 	const vectorInicial = [];
 
 	let nInicial = -1,
@@ -142,8 +143,8 @@ export async function App() {
 			} else {
 				const $calcular = d.querySelectorAll('.valFin');
 				matrizTransicion = listToMatrix($calcular, nInicial);
-				// console.log(matrizTransicion)
-				calculateMarkov(matrizTransicion, vectorInicial)
+				ans = calculateMarkov.calcule(matrizTransicion, vectorInicial);
+				console.log(ans);
 			}
 		}
 	});
