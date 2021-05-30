@@ -24,5 +24,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [@gabrielgt99](https://github.com/gabrielgt99)
 
 Project Link: [Cadenas de Markov](https://github.com/gabrielgt99/Cadenas-de-Markov)
-
-<a href="https://www.producthunt.com/posts/easybase-io?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-easybase-io" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=278380&theme=dark" alt="Easybase.io - Serverless platform for apps and projects. React.js Focused. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
