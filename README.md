@@ -1,6 +1,6 @@
 <h1>Estado Estable Cadenas de Markov</h1>
 <p align="center">
-  <img alt="License" src="hhttps://img.shields.io/badge/license-MIT-green">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
   <img alt="Version" src="https://img.shields.io/badge/release-v1.0-blue">
 </p>
 
