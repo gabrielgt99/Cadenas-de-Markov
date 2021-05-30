@@ -12,6 +12,9 @@ En este proyecto se busca encontrar el estado estable de las cadenas de markov.<
 Es necesario el estado inicial y la matriz de transicion.<br />
 Se hace uso de HTML, css y Javascript.<br />
 
+### Nota:
+Tenga en cuenta que el programa esta pensado para ser escrito de forma horizontal, es decir que la suma de las filas debe dar 1, ver el `Ejemplo`.
+
 <!-- EXAMPLE -->
 ## Ejemplo
 ### Matriz de Transicion
