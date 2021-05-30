@@ -146,11 +146,12 @@ export async function App() {
 				);
 				matrizTransicion = [];
 			} else {
+				loader($divCalcular);
+
 				const $calcular = d.querySelectorAll('.valFin');
 				matrizTransicion = listToMatrix($calcular, nInicial);
 				ans = calculateMarkov.calcule(matrizTransicion, vectorInicial);
 
-				loader($divCalcular);
 				if (ans) {
 					removeLoader();
 					$divCalcular.remove();
@@ -183,7 +184,17 @@ export async function App() {
 					);
 					if (ans.length > 6) {
 						d.getElementById('footer').style.position = 'sticky';
+						$main.classList.add('my-2');
 					}
+
+					const totalH = d.body.getBoundingClientRect().height;
+
+					setTimeout(() => {
+						window.scroll({
+							top: totalH,
+							behavior: 'smooth',
+						});
+					}, 100);
 				}
 
 				//console.log(ans);
@@ -200,17 +211,20 @@ export async function App() {
 	}
 
 	function loader($divCalcular) {
+		disableInputs();
 		const h = $divCalcular.clientHeight;
-		const $span = d.getElementById('span-calcularSpan');
-		const $table = $divCalcular.querySelector('table');
 		const $btnCalc = d.getElementById('btn-calcular');
-		$span.remove();
-		$table.remove();
-		$btnCalc.remove();
-		$divCalcular.appendChild(Loader('calculando', 'py-3'));
-		$divCalcular.classList.add('justify-content-center');
-		$divCalcular.classList.add('align-content-center');
+		$divCalcular.style.filter = 'blur(1px)';
+		$btnCalc.setAttribute('disabled', 'true');
+		$main.appendChild(Loader('calculando', 'loader'));
 		$divCalcular.style.height = `${h}px`;
+	}
+
+	function disableInputs() {
+		const $inputs = d.querySelectorAll('input');
+		$inputs.forEach((el) => {
+			el.setAttribute('disabled', 'true');
+		});
 	}
 
 	function listToMatrix(list, elementsPerSubArray) {
