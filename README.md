@@ -11,9 +11,10 @@
 En este proyecto se busca encontrar el estado estable de las cadenas de markov.<br />
 Es necesario el estado inicial y la matriz de transicion.<br />
 Unicamente se hace uso de HTML, css y Javascript.<br />
-| Attempt | #1  | #2  |
-
-| Seconds | 301 | 283 |
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 <!-- LICENSE -->
 ## License
 
