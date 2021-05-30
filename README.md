@@ -15,7 +15,7 @@ Unicamente se hace uso de HTML, css y Javascript.<br />
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distribuido bajo la licencia MIT. Ver `LICENSE` para mas informacion.
 
 <!-- CONTACT -->
 ## Contact
@@ -23,4 +23,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [@camilohamon](https://github.com/camilohamon)<br />
 [@gabrielgt99](https://github.com/gabrielgt99)
 
-Project Link: [Cadenas de Markov](https://github.com/gabrielgt99/Cadenas-de-Markov)
+Link del Proyecto: [Cadenas de Markov](https://github.com/gabrielgt99/Cadenas-de-Markov)
