@@ -1,8 +1,4 @@
-<style>
-td, th {
-   border: none!important;
-}
-</style>
+
 
 <h1>Estado Estable Cadenas de Markov</h1>
 <p align="center">
@@ -24,6 +20,12 @@ Tenga en cuenta que el programa esta pensado para ser escrito de forma horizonta
 <!-- EXAMPLE -->
 ## Ejemplo
 ### Matriz de Transicion
+
+<style>
+td, th {
+   border: none!important;
+}
+</style>
 
 |               |       a       |       b       |       b       |
 | ------------- | ------------- | ------------- | ------------- |
