@@ -22,7 +22,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-[@camilohamon](https://github.com/camilohamon)
+[@camilohamon](https://github.com/camilohamon)<br />
 [@gabrielgt99](https://github.com/gabrielgt99)
 
 Project Link: [Cadenas de Markov](https://github.com/gabrielgt99/Cadenas-de-Markov)
