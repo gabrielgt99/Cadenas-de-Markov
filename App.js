@@ -12,7 +12,7 @@ export async function App() {
 	const $div = d.getElementById('div-main');
 	$div.appendChild(Span('mainSpan', 'Numero inicial:', 'mr-1'));
 	$div.appendChild(Input('mainInput', 'number'));
-	$div.appendChild(Buttons('mainBtn', 'Siguiente', 'ml-1'));
+	$div.appendChild(Buttons('mainBtn', 'Siguiente', 'btn btn-outline-dark'));
 
 	d.addEventListener('click', (e) => {
 		if (e.target.matches('#btn-mainBtn')) {
