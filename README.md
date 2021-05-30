@@ -3,7 +3,7 @@
   <img alt="npm" src="https://img.shields.io/npm/dw/easybase-react">
   <img alt="GitHub" src="https://img.shields.io/github/license/easybase/easybase-react">
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/easybase-react">
-  <img alt="npm" src="https://img.shields.io/npm/v/easybase-react">
+  <img alt="npm" src="https://img.shields.io/badge/release-v1.0-blue">
 </p>
 
 <br />
