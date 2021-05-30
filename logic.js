@@ -6,10 +6,10 @@ function multiply(a, b) {
         aux = 0
         for (var j = 0; j<aNumRows; j++){
             aux += b[j] * a[j][i]
-            console.log(b[j], " * ", a[j][i])
+            // console.log(b[j], " * ", a[j][i])
         }
         m[i] = aux.toFixed(2);
-        console.log("####", m[i], "####")
+        // console.log("####", m[i], "####")
     }
     return m;
   }
@@ -19,14 +19,14 @@ function stedayState(a,b){
 
     for (var i = 0; i<1000; ++i){
         b = multiply(a, b);
-        console.log("");
+        // console.log("");
         states[0] = states[1]
         states[1] = states[2]
         states[2] = b
 
-        console.log(states[0]);
-        console.log(states[1]);
-        console.log(states[2]);
+        // console.log(states[0]);
+        // console.log(states[1]);
+        // console.log(states[2]);
 
         if(states[2] == states[1] || states[2] == states[0])
             break;
