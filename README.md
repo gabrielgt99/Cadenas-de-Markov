@@ -10,9 +10,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
-En este proyecto se busca encontrar el estado estable de las cadenas de markov.
-Se hace uso del estado inicial y la matriz de transicion.
-Unicamente se hace uso de HTML, css y Javascript.
+En este proyecto se busca encontrar el estado estable de las cadenas de markov.<br />
+Se hace uso del estado inicial y la matriz de transicion.<br />
+Unicamente se hace uso de HTML, css y Javascript.<br />
 
 <!-- LICENSE -->
 ## License
