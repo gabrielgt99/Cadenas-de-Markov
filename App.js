@@ -20,12 +20,30 @@ export async function App() {
 			const value = Number($input.value);
 
 			removeAlert();
-			if (!isNaN(value) && value > 0) {
+			if (!isNaN(value) && value > 1) {
+				$div.remove();
+				const $fragment = d.createDocumentFragment();
+				for (let i = 0; i < value; i++) {
+					const $divVec = Div(`value-${i + 1}`, 'mr-1 ml-1 mt-1 mb-1');
+
+					$divVec.appendChild(TextNode(`Valor ${i + 1}: `));
+					$divVec.appendChild(Input(`vec-${i + 1}`, 'number', 'vectors'));
+					$fragment.appendChild($divVec);
+				}
+				$main.appendChild(Div('vector', 'border padding rounded'));
+				const $divVector = d.getElementById('div-vector');
+				$divVector.appendChild($fragment);
+				$divVector.appendChild(Buttons('mainVector', 'Siguiente', 'ml-1 mt-1'));
 			} else {
 				const $alert = Div('alert', 'alert alert-danger mt-1');
-				$alert.appendChild(TextNode(`Error, el numero debe ser mayor a 0`));
+				$alert.appendChild(TextNode(`Error, el numero debe ser mayor a 1`));
 				$main.appendChild($alert);
 			}
+		}
+
+		if (e.target.matches('#btn-mainVector')) {
+			const $vectors = d.querySelectorAll('.vectors');
+			$vectors.forEach((el) => {});
 		}
 	});
 
