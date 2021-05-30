@@ -5,6 +5,7 @@ import { Buttons } from './components/Buttons.js';
 import { TextNode } from './components/TextNode.js';
 import { Table } from './components/Table.js';
 import { Alert } from './components/Alert.js';
+import { calculateMarkov } from './logic.js';
 
 export async function App() {
 	//var DOM
@@ -29,7 +30,7 @@ export async function App() {
 	const vectorInicial = [];
 
 	let nInicial = -1,
-		sendData = [];
+		matrizTransicion = [];
 
 	d.addEventListener('click', (e) => {
 		if (e.target.matches('#btn-mainBtn')) {
@@ -137,16 +138,30 @@ export async function App() {
 				$divCalcular.appendChild(
 					Alert('alert', 'Debe rellenar todos los campos')
 				);
-				sendData = [];
+				matrizTransicion = [];
 			} else {
 				const $calcular = d.querySelectorAll('.valFin');
-				$calcular.forEach((el) => {
-					const value = Number(el.value);
-					if (!isNaN(value) && el.value.length > 0) sendData.push(value);
-				});
+				matrizTransicion = listToMatrix($calcular, nInicial);
+				// console.log(matrizTransicion)
+				calculateMarkov(matrizTransicion, vectorInicial)
 			}
 		}
 	});
+
+	function listToMatrix(list, elementsPerSubArray) {
+		var matrix = [], i, k;
+	
+		for (i = 0, k = -1; i < list.length; i++) {
+			if (i % elementsPerSubArray === 0) {
+				k++;
+				matrix[k] = [];
+			}
+	
+			matrix[k].push(Number(list[i].value));
+		}
+	
+		return matrix;
+	}
 
 	function validarInput(clase) {
 		let val = true;
