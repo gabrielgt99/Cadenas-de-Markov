@@ -13,7 +13,8 @@
 
 * [Acerca del Proyecto](#about-the-project)
 * [Uso](#usage)
-* [License](#license)
+* [Licencia](#license)
+* [Contacto](#contact)
 
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
