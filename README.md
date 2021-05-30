@@ -13,7 +13,7 @@ Es necesario el estado inicial y la matriz de transicion.<br />
 Se hace uso de HTML, css y Javascript.<br />
 
 ### Nota:
-Tenga en cuenta que el programa esta pensado para ser escrito de forma horizontal, es decir que la suma de las filas debe dar 1, ver el `Ejemplo`.
+Tenga en cuenta que el programa esta pensado para ser escrito de forma horizontal, es decir que la suma de las filas debe dar 1.
 
 <!-- EXAMPLE -->
 ## Ejemplo
@@ -21,9 +21,9 @@ Tenga en cuenta que el programa esta pensado para ser escrito de forma horizonta
 
 |       /       |       a       |       b       |       b       |
 | ------------- | ------------- | ------------- | ------------- |
-|       a       | Content Cell  | Content Cell  | Content Cell  |
-|       b       | Content Cell  | Content Cell  | Content Cell  |
-|       c       | Content Cell  | Content Cell  | Content Cell  |
+|       a       |       0       |      0.5      |      0.5      |
+|       b       |     0.75      |       0       |     0.25      |
+|       c       |       1       |       0       |       0       |
 
 <!-- LICENSE -->
 ## License
