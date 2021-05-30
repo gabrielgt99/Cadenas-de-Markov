@@ -1,21 +1,22 @@
-import { Input } from './Input.js';
+import { TextNode } from './TextNode.js';
 
-export function Table(tam) {
+export function Result(tam) {
 	const d = document;
 	const $table = d.createElement('table');
-	$table.classList = 'table table-hover table-responsive text-cencer';
+	$table.classList = 'table table-hover';
 	const $tHead = d.createElement('thead'),
 		$trHead = d.createElement('tr');
 
 	$trHead.classList.add('text-center');
+
 	const $fragmentHead = d.createDocumentFragment();
-	const $th2 = d.createElement('th');
-	$th2.textContent = '';
-	$fragmentHead.appendChild($th2);
+	const $states = d.createElement('th');
+	$states.textContent = 'Estado';
+	$fragmentHead.appendChild($states);
+
 	let aux = 0;
 	for (const p of tam) {
 		const $th = d.createElement('th');
-		$th.classList = 'text-center';
 		$th.textContent = String.fromCharCode(97 + aux);
 		$fragmentHead.appendChild($th);
 		aux++;
@@ -24,26 +25,27 @@ export function Table(tam) {
 	$tHead.appendChild($trHead);
 
 	const $tBody = d.createElement('tbody');
-
-	let aux2 = 0;
+	let pos = 1;
 	for (const t of tam) {
 		const $trBody = d.createElement('tr'),
 			$fragmentBody = d.createDocumentFragment();
+		$trBody.setAttribute('id', `trBody-${pos}`);
+		console.log(t);
 
-		const $tdVar = d.createElement('td');
-		$tdVar.classList = 'text-center';
-		$tdVar.innerHTML = `<strong>${String.fromCharCode(97 + aux2)}</strong>`;
-		$fragmentBody.appendChild($tdVar);
+		const $tdState = d.createElement('td');
+		$tdState.classList = 'text-center';
+		$tdState.appendChild(TextNode(`E${pos}`));
+		$fragmentBody.appendChild($tdState);
 
-		for (const b of tam) {
+		for (const b of t) {
 			const $td = d.createElement('td');
 			$td.classList = 'text-center';
-			$td.appendChild(Input(b, 'number', 'valFin form-control'));
+			$td.appendChild(TextNode(b));
 			$fragmentBody.appendChild($td);
 		}
 		$trBody.appendChild($fragmentBody);
 		$tBody.appendChild($trBody);
-		aux2++;
+		pos++;
 	}
 	$table.appendChild($tHead);
 

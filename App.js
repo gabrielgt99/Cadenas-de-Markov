@@ -2,17 +2,21 @@ import { Input } from '/components/Input.js';
 import { Span } from '/components/Span.js';
 import { Div } from '/components/Div.js';
 import { Buttons } from './components/Buttons.js';
-import { TextNode } from './components/TextNode.js';
 import { Table } from './components/Table.js';
 import { Alert } from './components/Alert.js';
 import calculateMarkov from './logic.js';
+import { Loader } from './components/Loader.js';
+import { Result } from './components/Result.js';
 
 export async function App() {
 	//var DOM
 	const d = document;
 	const $main = d.getElementById('main');
 	$main.appendChild(
-		Div('main', 'border padding rounded d-grid gap-2 col-6 mx-auto pt-0 shadow')
+		Div(
+			'main',
+			'border padding rounded d-grid gap-2 col-10 col-md-6 mx-auto pt-0 shadow'
+		)
 	);
 
 	const $div = d.getElementById('div-main');
@@ -76,7 +80,7 @@ export async function App() {
 				$main.appendChild(
 					Div(
 						'vector',
-						'border padding rounded d-grid gap-2 col-6 mx-auto pt-0 shadow'
+						'border padding rounded d-grid gap-2 col-10 col-md-6 mx-auto pt-0 shadow'
 					)
 				);
 				const $divVector = d.getElementById('div-vector');
@@ -110,11 +114,12 @@ export async function App() {
 				$main.appendChild(
 					Div(
 						'calcular',
-						'border padding rounded d-grid gap-2 col-auto mx-auto pt-0 shadow'
+						'border padding rounded d-grid gap-2 col-10 col-md-6 mx-auto pt-0 shadow'
 					)
 				);
 
 				const $divCalcular = d.getElementById('div-calcular');
+				$divCalcular.style.overflowX = 'auto';
 				$divCalcular.appendChild(
 					Span(
 						'calcularSpan',
@@ -133,9 +138,9 @@ export async function App() {
 		if (e.target.matches('#btn-calcular')) {
 			removeAlert();
 			const val = validarInput('valFin');
+			const $divCalcular = d.getElementById('div-calcular');
 
 			if (!val) {
-				const $divCalcular = d.getElementById('div-calcular');
 				$divCalcular.appendChild(
 					Alert('alert', 'Debe rellenar todos los campos')
 				);
@@ -144,23 +149,84 @@ export async function App() {
 				const $calcular = d.querySelectorAll('.valFin');
 				matrizTransicion = listToMatrix($calcular, nInicial);
 				ans = calculateMarkov.calcule(matrizTransicion, vectorInicial);
-				console.log(ans);
+
+				loader($divCalcular);
+				if (ans) {
+					removeLoader();
+					$divCalcular.remove();
+
+					$main.appendChild(
+						Div(
+							'response',
+							'border padding rounded d-grid gap-2 col-10 col-md-6 mx-auto pt-0 shadow'
+						)
+					);
+
+					const $divRes = d.getElementById('div-response');
+					$divRes.style.overflowX = 'auto';
+					$divRes.appendChild(
+						Span(
+							'response',
+							'Resultado:',
+							'text-center card-title border-bottom py-3'
+						)
+					);
+
+					$divRes.appendChild(Result(ans));
+
+					const $trBodyFinal = d.getElementById(`trBody-${ans.length}`);
+					$trBodyFinal.classList = 'bg-primary bg-gradient text-white';
+					const $td = $trBodyFinal.querySelectorAll('td');
+					$td[0].textContent = 'Estado Estable';
+					$divRes.appendChild(
+						Buttons('reload', 'Aceptar', 'btn btn-outline-dark')
+					);
+					if (ans.length > 6) {
+						d.getElementById('footer').style.position = 'sticky';
+					}
+				}
+
+				//console.log(ans);
 			}
+		}
+
+		if (e.target.matches('#btn-reload')) {
+			location.reload();
 		}
 	});
 
+	function removeLoader() {
+		d.getElementById('svg-calculando').remove();
+	}
+
+	function loader($divCalcular) {
+		const h = $divCalcular.clientHeight;
+		const $span = d.getElementById('span-calcularSpan');
+		const $table = $divCalcular.querySelector('table');
+		const $btnCalc = d.getElementById('btn-calcular');
+		$span.remove();
+		$table.remove();
+		$btnCalc.remove();
+		$divCalcular.appendChild(Loader('calculando', 'py-3'));
+		$divCalcular.classList.add('justify-content-center');
+		$divCalcular.classList.add('align-content-center');
+		$divCalcular.style.height = `${h}px`;
+	}
+
 	function listToMatrix(list, elementsPerSubArray) {
-		var matrix = [], i, k;
-	
+		var matrix = [],
+			i,
+			k;
+
 		for (i = 0, k = -1; i < list.length; i++) {
 			if (i % elementsPerSubArray === 0) {
 				k++;
 				matrix[k] = [];
 			}
-	
+
 			matrix[k].push(Number(list[i].value));
 		}
-	
+
 		return matrix;
 	}
 
