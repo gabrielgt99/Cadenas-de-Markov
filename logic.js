@@ -8,42 +8,34 @@ function multiply(a, b) {
             aux += b[j] * a[j][i]
             console.log(b[j], " * ", a[j][i])
         }
-        
-        m[i] = aux
+        m[i] = aux.toFixed(2);
         console.log("####", m[i], "####")
     }
     return m;
   }
-  
-  function display(m) {
-    for (var r = 0; r < m.length; ++r) {
-      document.write('&nbsp;&nbsp;'+m[r].join(' ')+'<br />');
+
+function stedayState(a,b){
+    let states = [,,]
+
+    for (var i = 0; i<1000; ++i){
+        b = multiply(a, b);
+        console.log("");
+        states[0] = states[1]
+        states[1] = states[2]
+        states[2] = b
+
+        console.log(states[0]);
+        console.log(states[1]);
+        console.log(states[2]);
+
+        if(states[2] == states[1] || states[2] == states[0])
+            break;
     }
-  }
-  
+}
+
 var a = [[0,0.5,0.5]
         ,[0.75,0,0.25]
         ,[1,0,0]],
     b = [0,1,0];
 
-
-document.write('matrix a:<br />');
-display(a);
-document.write('matrix b:<br />');
-//display(b);
-document.write('a * b =<br />');
-
-ant1 = b
-ant2 = b
-for (var i = 0; i<20; ++i){
-    if (ant2 == b)
-        console.log("entra")
-    console.log("")
-    b = multiply(a, b)
-    
-    
-    ant1 = ant2
-    
-    
-    ant2 = b
-}
+stedayState(a,b)
