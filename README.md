@@ -1,17 +1,3 @@
-<!-- PROJECT LOGO -->
-<p align="center">
-  <img src="./assets/carbon.png" width="100%" alt="easybase code example">
-</p>
-
-<br />
-
-<p align="center">
-  <a href="https://easybase.io">
-    <img src="https://easybase.io/assets/images/logo_black.png" alt="easybase logo black" width="80" height="80">
-  </a>
-</p>
-
-<br />
 
 <p align="center">
   <img alt="npm" src="https://img.shields.io/npm/dw/easybase-react">
