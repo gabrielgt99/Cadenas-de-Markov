@@ -15,7 +15,8 @@ export function Result(tam) {
 	$fragmentHead.appendChild($states);
 
 	let aux = 0;
-	for (const p of tam) {
+
+	for (const p of tam[0]) {
 		const $th = d.createElement('th');
 		$th.textContent = String.fromCharCode(97 + aux);
 		$fragmentHead.appendChild($th);
