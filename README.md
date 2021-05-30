@@ -1,12 +1,5 @@
 # Cadenas-de-Markov
 Cadenas de Markov en javascript
-<!-- PROJECT LOGO -->
-<p align="center">
-  <img src="./assets/carbon.png" width="100%" alt="easybase code example">
-</p>
-
-<br />
-
 <p align="center">
   <a href="https://easybase.io">
     <img src="https://easybase.io/assets/images/logo_black.png" alt="easybase logo black" width="80" height="80">
