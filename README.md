@@ -1,4 +1,4 @@
-<h1>Cadenas de Markov</h1>
+<h1>Estado Estable Cadenas de Markov</h1>
 <p align="center">
   <img alt="npm" src="https://img.shields.io/npm/dw/easybase-react">
   <img alt="GitHub" src="https://img.shields.io/github/license/easybase/easybase-react">
@@ -9,54 +9,23 @@
 <br />
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Tabla de Contenidos
 
-* [About the Project](#about-the-project)
-  * [Purpose](#purpose)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
+* [Acerca del Proyecto](#about-the-project)
+* [Como usar](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
-* [Documentation](https://easybase.io/docs/easybase-react/)
-* [Examples](#examples)
-* [Troubleshoot](#troubleshoot)
+* [Uso y Ejemplos](#usage)
 * [License](#license)
 * [Contact](#contact)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-React and React Native compatible library for use with Easybase. This serverless platform works with a **free** account. `easybase-react` can be used with a table's REACT integration or with a Project. In the latter case, this package provides functions for managing user authentication. Documentation for this project can be found [here](#useEasybase). 
-
-
-| REACT Integration                | Project                    |
-|----------------------------------|----------------------------|
-| Live usage analytics             | Live usage analytics       |
-| Custom table permissions         | Custom table permissions   |
-| Database query builder           | Database query builder     |
-| Access to visual queries         | Access to visual queries   |
-| *~~User authentication~~*        | User authentication        |
-| *~~Get/Set user attributes~~*    | Get/Set user attributes    |
-| *~~Access multiple tables~~*     | Access multiple tables     |
-| *~~Associate records to users~~* | Associate records to users |
-
-**Cloud functions** can be invoked using this package with the automatically generated route as provided by Easybase. [Click here](https://easybase.io/react/) to learn more about Easybase.io and check out the examples below.
-
-### Purpose
-
-This project aims to be the most developer-friendly serverless framework for React. Functions and attributes of `easybase-react` are stateful and explicitly follow the React component lifecycle. 
-
-The **only** configuration needed to get this library up and running is an `ebconfig.js` token, as provided by Easybase. Your React & React Native applications will instantly have secure access to the features laid out in the above table.
-
-### Built With
-
-* [create-react-library](https://github.com/transitive-bullshit/create-react-library)
-* [cross-fetch](https://github.com/lquixada/cross-fetch)
-* [easybase.io](https://easybase.io)
-* [object-observer](https://github.com/gullerya/object-observer)
-* [microbundle](https://github.com/developit/microbundle)
+## Acerca del Proyecto
+En este proyecto se busca encontrar el estado estable de las cadenas de markov.
+Se hace uso del estado inicial y la matriz de transicion.
+Unicamente se hace uso de HTML, css y Javascript.
 
 
 <!-- GETTING STARTED -->
