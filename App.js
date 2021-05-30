@@ -4,16 +4,25 @@ import { Div } from '/components/Div.js';
 import { Buttons } from './components/Buttons.js';
 import { TextNode } from './components/TextNode.js';
 import { Table } from './components/Table.js';
+import { Alert } from './components/Alert.js';
 
 export async function App() {
 	//var DOM
 	const d = document;
 	const $main = d.getElementById('main');
-	$main.appendChild(Div('main', 'border padding rounded'));
+	$main.appendChild(
+		Div('main', 'border padding rounded d-grid gap-2 col-6 mx-auto pt-0 shadow')
+	);
 
 	const $div = d.getElementById('div-main');
-	$div.appendChild(Span('mainSpan', 'Numero inicial:', 'mr-1'));
-	$div.appendChild(Input('mainInput', 'number'));
+	$div.appendChild(
+		Span(
+			'mainSpan',
+			'Numero Variables:',
+			'text-center card-title border-bottom py-3'
+		)
+	);
+	$div.appendChild(Input('mainInput', 'number', 'form-control'));
 	$div.appendChild(Buttons('mainBtn', 'Siguiente', 'btn btn-outline-dark'));
 
 	//var logic
@@ -32,23 +41,49 @@ export async function App() {
 				nInicial = value;
 				$div.remove();
 				const $fragment = d.createDocumentFragment();
+				$fragment.appendChild(
+					Span(
+						'title',
+						'Definición de Variables',
+						'text-center card-title border-bottom py-3'
+					)
+				);
 				for (let i = 0; i < value; i++) {
-					const $divVec = Div(`value-${i + 1}`, 'mr-1 ml-1 mt-1 mb-1');
-
-					$divVec.appendChild(TextNode(`Valor ${i + 1}: `));
-					$divVec.appendChild(Input(`vec-${i + 1}`, 'number', 'vectors'));
-					$fragment.appendChild($divVec);
+					const $mainRow = Div(
+						`mainRow-${i}`,
+						'row justify-content-center align-items-center'
+					);
+					const $row = Div(
+						`row-${i}`,
+						'row col-11 justify-content-center align-items-center border rounded py-2'
+					);
+					const $colVar = Div(`col-${i}`, 'col-3 text-center');
+					const $colInput = Div(`colInput-${i}`, 'col-8 text-center');
+					const text = String.fromCharCode(97 + i);
+					$colVar.appendChild(
+						Span('mainSpan', `${text}`, 'text-center card-title py-1')
+					);
+					$colInput.appendChild(
+						Input(`vec-${i + 1}`, 'number', 'vectors w-100 form-control')
+					);
+					$row.appendChild($colVar);
+					$row.appendChild($colInput);
+					$mainRow.appendChild($row);
+					$fragment.appendChild($mainRow);
 				}
-				$main.appendChild(Div('vector', 'border padding rounded'));
+				$main.appendChild(
+					Div(
+						'vector',
+						'border padding rounded d-grid gap-2 col-6 mx-auto pt-0 shadow'
+					)
+				);
 				const $divVector = d.getElementById('div-vector');
 				$divVector.appendChild($fragment);
 				$divVector.appendChild(
-					Buttons('vector', 'Siguiente', 'btn btn-outline-dark')
+					Buttons('vector', 'Siguiente', 'btn btn-outline-dark mt-3')
 				);
 			} else {
-				const $alert = Div('alert', 'alert alert-danger mt-1');
-				$alert.appendChild(TextNode(`Error, el numero debe ser mayor a 1`));
-				$main.appendChild($alert);
+				$div.appendChild(Alert('alert', 'El numero debe ser mayor a 1'));
 			}
 		}
 
@@ -56,9 +91,8 @@ export async function App() {
 			const val = validarInput('vectors');
 			removeAlert();
 			if (!val) {
-				const $alert = Div('alert', 'alert alert-danger mt-1');
-				$alert.appendChild(TextNode(`Debe llenar todas las casillas`));
-				$main.appendChild($alert);
+				const $divVector = d.getElementById('div-vector');
+				$divVector.appendChild(Alert('alert', 'Debe llenar todos los campos'));
 			} else {
 				const $vectors = d.querySelectorAll('.vectors');
 				$vectors.forEach((el) => {
@@ -71,8 +105,24 @@ export async function App() {
 				let tam = [];
 				for (let i = 0; i < nInicial; i++) tam.push(i);
 
-				$main.appendChild(Table(tam));
 				$main.appendChild(
+					Div(
+						'calcular',
+						'border padding rounded d-grid gap-2 col-auto mx-auto pt-0 shadow'
+					)
+				);
+
+				const $divCalcular = d.getElementById('div-calcular');
+				$divCalcular.appendChild(
+					Span(
+						'calcularSpan',
+						'Matriz de Transición',
+						'text-center card-title border-bottom py-3'
+					)
+				);
+				$divCalcular.appendChild(Table(tam));
+
+				$divCalcular.appendChild(
 					Buttons('calcular', 'Calcular', 'btn btn-outline-dark')
 				);
 			}
@@ -83,10 +133,11 @@ export async function App() {
 			const val = validarInput('valFin');
 
 			if (!val) {
+				const $divCalcular = d.getElementById('div-calcular');
+				$divCalcular.appendChild(
+					Alert('alert', 'Debe rellenar todos los campos')
+				);
 				sendData = [];
-				const $alert = Div('alert', 'alert alert-danger mt-1');
-				$alert.appendChild(TextNode(`Debe llenar todas las casillas`));
-				$main.appendChild($alert);
 			} else {
 				const $calcular = d.querySelectorAll('.valFin');
 				$calcular.forEach((el) => {
