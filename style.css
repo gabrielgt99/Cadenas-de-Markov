@@ -70,3 +70,8 @@
 	left: 49%;
 	z-index: 100;
 }
+
+.form-control{
+    padding: .1rem 0.3rem;
+    text-align: center;
+}

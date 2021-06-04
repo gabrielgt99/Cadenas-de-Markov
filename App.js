@@ -159,7 +159,7 @@ export async function App() {
 					$main.appendChild(
 						Div(
 							'response',
-							'border padding rounded d-grid gap-2 col-10 col-md-6 mx-auto pt-0 shadow'
+							'border padding rounded d-grid gap-2 col-10 col-md-auto mx-auto pt-0 shadow'
 						)
 					);
 
